@@ -1,1 +1,23 @@
-index.html
+<html ng-app="ministore_app">
+<head>
+  <title>Full Mean Demo</title>
+  <!-- require angular -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+  <script src="script.js"></script>
+  <script src="./controllers/customers.js"></script> 
+  <script src="./controllers/orders.js"></script>
+  <script src="./controllers/products.js"></script>
+  <script src="./factories/orders_factory.js"></script>
+  <script src="./factories/customers_factory.js"></script>
+  <script src="./factories/products_factory.js"></script>
+</head>
+<!-- everything in the body is going to use the friends controller (this gives us access to the friends controller $scope) -->
+<body >
+    <div>
+        <a href="#/customers">Customers</a> | <a href="#/orders">Orders</a> |<a href="#/products">Products</a>
+        <div ng-view="">
+        </div>
+    </div>
+</body>
+</html>
