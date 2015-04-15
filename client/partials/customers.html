@@ -28,5 +28,22 @@
     			</tr>
     			
     		</tbody>
-    	</table>	
+    	</table>
+	<table ng-controller ="OrdersController">
+		<thead>
+		<tr>
+			<td>Customer Name</td>
+			<td>Product Name</td>
+			<td>Quantity</td>
+			<td>Date Ordered</td>
+		</tr>
+		</thead>
+		<tr ng-repeat = "order in orders | filter:filter_name | orderBy:'name' ">
+			<td>{{order.name}}</td>
+			<td>{{order.item}}</td>
+			<td>{{order.quantity}}</td>
+			<td>{{order.date | date:format:LongDate}}</td>
+			<td><input type="submit" value="Delete" ng-click="deleteOrder(order)"></td>
+		</tr>
+	</table>
 </div>

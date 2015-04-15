@@ -4,7 +4,7 @@ var express = require('express');
 //require path
 var path = require('path');
 
-// instatntiate the app
+// instantiate the app
 var app = express();
 
 // set up a static file server that points to "client" directory

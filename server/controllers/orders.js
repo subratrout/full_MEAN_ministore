@@ -1,11 +1,11 @@
-// First add the following two lines at the top of the friends controller so that we can access our model through var Friend
+// First add the following two lines at the top of the Order controller so that we can access our model through var Friend
 // need to require mongoose to be able to run mongoose.model()
 var mongoose = require('mongoose');
 var Order = mongoose.model('Order');
 
 
 
-// this is our friends.js file located at /server/controllers/friends.js
+// this is our orders.js file located at /server/controllers/orders.js
 // note the immediate function and the object that is returned
 module.exports = (function() {
   return {

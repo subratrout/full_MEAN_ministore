@@ -1,5 +1,6 @@
 var customers = require('./../server/controllers/customers.js');
 var orders = require('./../server/controllers/orders.js');
+var products = require('./../server/controllers/products.js');
 var bodyParser = require("body-parser");
 
 
@@ -36,5 +37,20 @@ module.exports = function(app){
 	app.post('/remove_order', function(req, res){
 		
 		orders.remove(req,res);
+	});
+
+	app.get('/products', function(req, res){
+		products.show(req,res);
+
+	});
+
+	app.post('/add_product', function(req, res){
+
+		products.add(req,res);
+	});
+
+	app.post('/remove_product', function(req, res){
+
+		products.remove(req,res);
 	});
 }
