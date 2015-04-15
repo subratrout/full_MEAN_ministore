@@ -4,7 +4,7 @@
   ministore_app.config(function ($routeProvider) {
       $routeProvider
         .when('/',{
-            templateUrl: 'partials/customers.html'
+            templateUrl: 'partials/dashboard.html'
         })
         .when('/customers',{
             templateUrl: 'partials/customers.html'
@@ -14,6 +14,10 @@
         })
         .when('/products',{
             templateUrl: 'partials/products.html'
+        })
+
+        .when('/dashboard',{
+             templateUrl: 'partials/dashboard.html'
         })
         .otherwise({
           redirectTo: '/'

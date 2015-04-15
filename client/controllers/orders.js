@@ -1,5 +1,5 @@
 // Orders Controller
-ministore_app.controller('OrdersController', function($scope, OrderFactory, CustomerFactory){
+ministore_app.controller('OrdersController', function($scope, OrderFactory, CustomerFactory, ProductFactory){
 
     CustomerFactory.getCustomers(function(data){
       $scope.customers =data;
@@ -7,6 +7,10 @@ ministore_app.controller('OrdersController', function($scope, OrderFactory, Cust
     
     OrderFactory.getOrders(function(data){
       $scope.orders =data;
+    });
+
+    ProductFactory.getProducts(function(data){
+        $scope.products =data;
     });
     
     $scope.addOrder = function(){

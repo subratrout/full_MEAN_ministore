@@ -3,7 +3,7 @@
     Filter Orders: <input type="text" ng-model="filter_name">
 
 
-    <h2>Add a New Order.
+    <h2>Add a New Order.</h2>
 
     <form>
         <select ng-model="new_order.name">
@@ -11,10 +11,7 @@
         </select>
 
         <select ng-model ="new_order.item">
-            <option value ="Coding Dojo Cup">Coding Dojo Cup</option>
-            <option value ="Coding Dojo Mug">Coding Dojo Mug</option>
-            <option value ="Coding Dojo Black Belt">Coding Dojo Black Belt</option>
-            <option value ="Coding Dojo Coffee">Coding Dojo Coffee</option>
+            <option ng-repeat = "product in products">{{product.name}}</option>
         </select>
         Quantity: <input type="number" ng-model = "new_order.quantity">
         <input type="hidden" ng-model = "new_order.date">
