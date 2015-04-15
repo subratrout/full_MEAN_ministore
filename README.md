@@ -1,0 +1,1 @@
+MEAN stack to build a single page ministore App.
