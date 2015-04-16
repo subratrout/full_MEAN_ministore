@@ -28,7 +28,7 @@
 <div ng-controller ="CustomersController">
     <table>
         <tr ng-repeat="customer in customers | filter:filter_name" >
-            <td>{{customer.name}} joined the store on {{customer.date | date: format:LongDate}}</td>
+            <td>{{customer.name}} joined the store on {{millisecondsToStr(date_onsite -customer.date_string)}}</td>
         </tr>
     </table>
 </div>

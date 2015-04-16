@@ -4,9 +4,10 @@ ministore_app.controller('OrdersController', function($scope, OrderFactory, Cust
     CustomerFactory.getCustomers(function(data){
       $scope.customers =data;
     });
-    
+
     OrderFactory.getOrders(function(data){
-      $scope.orders =data;
+      $scope.orders = data;
+        console.log('kldjfklsdjf', data);
     });
 
     ProductFactory.getProducts(function(data){
@@ -31,6 +32,7 @@ ministore_app.controller('OrdersController', function($scope, OrderFactory, Cust
       })
 
       OrderFactory.getOrders(function(data){
+
         $scope.orders =data;
       });
     }   

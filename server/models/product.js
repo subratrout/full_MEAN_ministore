@@ -9,7 +9,7 @@ var ProductSchema = new mongoose.Schema({
     url: String,
     description: String,
     quantity: Number,
-    date: {type: Date, default: Date.now}
+    date: Date
 });
 
 // use the schema to create the model

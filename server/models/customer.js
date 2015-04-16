@@ -6,7 +6,8 @@ var mongoose = require('mongoose');
 
 var CustomerSchema = new mongoose.Schema({
   name: String,
-  date: {type: Date, default: Date.now}
+  date: Date,
+  date_string: Number
 });
 
 // use the schema to create the model

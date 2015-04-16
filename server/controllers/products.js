@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Product = mongoose.model('Product');
 
-
+var current_date = new Date();
 
 // this is our products.js file located at /server/controllers/products.js
 // note the immediate function and the object that is returned
@@ -20,7 +20,7 @@ module.exports = (function() {
         },
 
         add: function(req, res) {
-            var product = Product({name: req.body.name, url: req.body.url, description: req.body.description, quantity: req.body.quantity, date: req.body.date})
+            var product = Product({name: req.body.name, url: req.body.url, description: req.body.description, quantity: req.body.quantity, date: current_date})
             //console.log(req.body);
             product.save(function(err, results) {
                 if(err) {

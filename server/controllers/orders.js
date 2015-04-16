@@ -5,6 +5,7 @@ var Order = mongoose.model('Order');
 var Product = mongoose.model('Product');
 
 
+var current_date = Date.now();
 
 // this is our orders.js file located at /server/controllers/orders.js
 // note the immediate function and the object that is returned
@@ -15,13 +16,14 @@ module.exports = (function() {
 			    if(err) {
 			      console.log(err);
 			    } else {
+					console.log('results', results);
 			      res.json(results);
 			    }
 			  })
 			},
 
 		  	add: function(req, res) {
-			  	var order = Order({name: req.body.name, item: req.body.item, quantity: req.body.quantity, date: req.body.date})
+			  	var order = Order({name: req.body.name, item: req.body.item, quantity: req.body.quantity, date: current_date});
 			  	console.log(req.body);
 				  order.save(function(err, results) {
 					  if(err) {

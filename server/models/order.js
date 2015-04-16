@@ -8,7 +8,7 @@ var OrderSchema = new mongoose.Schema({
   name: String,
   item: String,
   quantity: Number,
-  date: {type: Date, default: Date.now}
+  date: Date
 });
 
 // use the schema to create the model
