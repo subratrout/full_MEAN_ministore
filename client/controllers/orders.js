@@ -12,6 +12,8 @@ ministore_app.controller('OrdersController', function($scope, OrderFactory, Cust
     ProductFactory.getProducts(function(data){
         $scope.products =data;
     });
+
+
     
     $scope.addOrder = function(){
       OrderFactory.addOrder($scope.new_order, function(data){

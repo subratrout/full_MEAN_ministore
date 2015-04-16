@@ -2,6 +2,7 @@
 // need to require mongoose to be able to run mongoose.model()
 var mongoose = require('mongoose');
 var Order = mongoose.model('Order');
+var Product = mongoose.model('Product');
 
 
 
@@ -26,7 +27,19 @@ module.exports = (function() {
 					  if(err) {
 						  console.log(err);
 					  } else {
-						  res.json(results);
+						  Product.findOne({name:req.body.item}, function(err, results2){
+							  var quantity_left = results2.quantity -req.body.quantity;
+
+							  Product.update({name: req.body.item}, {quantity: quantity_left}, function(err, results3){
+								  if(err){
+									  console.log(err)
+								  }
+								  else{
+									  res.json(results3);
+								  }
+							  })
+						  })
+
 					  }
 				  	})
 		  	},

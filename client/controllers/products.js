@@ -1,5 +1,5 @@
 // Orders Controller
-ministore_app.controller('ProductsController', function($scope, ProductFactory){
+ministore_app.controller('ProductsController', function($scope, ProductFactory, OrderFactory){
 
     ProductFactory.getProducts(function(data){
         $scope.products =data;

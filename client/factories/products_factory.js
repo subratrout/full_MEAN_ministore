@@ -14,7 +14,7 @@ ministore_app.factory('ProductFactory', function($http){
         $http.post('/add_product', info).success(function(){
 
         });
-    };
+    }
 
     factory.deleteProduct = function(info, callback){
         $http.post('/remove_product', info).success(function(){
