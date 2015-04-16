@@ -38,7 +38,7 @@
 			<td>Date Ordered</td>
 		</tr>
 		</thead>
-		<tr ng-repeat = "order in orders | filter:filter_name | orderBy:'name' ">
+		<tr ng-repeat = "order in orders | filter:filter_name | orderBy:'name' | orderBy: 'date'-1">
 			<td>{{order.name}}</td>
 			<td>{{order.item}}</td>
 			<td>{{order.quantity}}</td>

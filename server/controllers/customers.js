@@ -3,8 +3,7 @@
 var mongoose = require('mongoose');
 var Customer = mongoose.model('Customer');
 
-var d = new Date();
-current_date = d.getTime();
+
 
 
 // this is our friends.js file located at /server/controllers/friends.js
@@ -22,6 +21,8 @@ module.exports = (function() {
 			},
 
 		  	add: function(req, res) {
+		  		var d = new Date();
+				current_date = d.getTime();
 			  	var customer = Customer({name: req.body.name, date: d, date_string: current_date})
 			  	console.log(customer);
 				  customer.save(function(err, results) {

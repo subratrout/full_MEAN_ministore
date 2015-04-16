@@ -40,7 +40,7 @@
           }
 
           var temp = Math.floor(milliseconds / 1000);
-
+          
           var years = Math.floor(temp / 31536000);
           if (years) {
               return years + ' years ago' + numberEnding(years);
@@ -57,7 +57,7 @@
           if (minutes) {
               return minutes + ' minutes ago' + numberEnding(minutes);
           }
-          var seconds = temp ;
+          var seconds = temp % 60;
           if (seconds) {
               return seconds + ' seconds ago' + numberEnding(seconds);
           }
